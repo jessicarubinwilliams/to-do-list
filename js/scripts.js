@@ -3,6 +3,15 @@ function List() {
   this.currentId = 0;
 }
 
+List.prototype.assignId = function() {
+  this.currentId += 1;
+  return this.currentId;
+}
+
+// List.prototype.addTask = function(task) {
+
+// }
+
 function Task(description) {
   this.description = description;
   this.isComplete = false;
