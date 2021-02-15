@@ -14,3 +14,8 @@ Task.prototype.undoCompleteTask = function() {
   this.isComplete = false;
   //Does it need to return true? Will that return value need to be utilized?
 }
+
+Task.prototype.editDescription = function(newDescription) {
+  this.description = newDescription;
+  //Does it need to return true? Will that return value need to be utilized?
+}
