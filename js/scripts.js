@@ -21,6 +21,14 @@ List.prototype.findTask = function(id) { //
   }
 }
 
+List.prototype.deleteTask = function(id) {
+  if (this.tasks[id] === undefined) {
+    return false;
+  }
+  delete this.tasks[id];
+  return true; //Is this return value needed? When is it used?
+}
+
 function Task(description) {
   this.description = description;
   this.isComplete = false;
