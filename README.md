@@ -44,7 +44,7 @@ Test: "It will change the value of Task property key isComplete to false"
 Expect((task1.undoCompleteTask()).toEqual(Task {description: "Sweep the kitchen", isComplete: false}))
 
 Describe: Task.prototype.editDescription()
-Test: "It will take an argument and change the value of Task property that argument"
+Test: "It will take an argument and change the value of Task property description to that argument"
 Expect((task1.undoCompleteTask("Sweep and mop the kitchen")).toEqual(Task {description: "Sweep and mop the kitchen", isComplete: false}))
 
 Describe: List()
