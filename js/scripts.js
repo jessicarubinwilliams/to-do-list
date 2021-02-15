@@ -13,6 +13,14 @@ List.prototype.addTask = function(task) {
   this.tasks[task.id] = task //when the Task is added to List uses a Task's new id property as a new key within the List's tasks object. The value of that key is the Task object itself.
 }
 
+List.prototype.findTask = function(id) { //
+  if (this.tasks[id] != undefined) { //.tasks plural as referencing tasks property of List, not referencing the task object directly
+    return this.tasks[id];
+  } else {
+    return false;
+  }
+}
+
 function Task(description) {
   this.description = description;
   this.isComplete = false;
