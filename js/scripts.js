@@ -1,4 +1,9 @@
-function Task (description) {
+function List() {
+  this.tasks = {};
+  this.currentId = 0;
+}
+
+function Task(description) {
   this.description = description;
   this.isComplete = false;
 }
