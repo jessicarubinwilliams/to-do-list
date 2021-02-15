@@ -68,9 +68,12 @@ Test: "It will take a Task ID value as an argument and if there is not task with
 Expect((list1.findTask(2)).toEqual(false))
 <!-- Expect((list1.findTask(list1.tasks[2].id)).toEqual(false)) This returns: Uncaught TypeError: Cannot read property 'id' of undefined -->
 
-Describe: List.prototype.removeTask
+Describe: List.prototype.deleteTask
 Test: "It will take a Task as an argument and remove that task from the list"
-Expect((list1.removeTask()).toEqual(List {tasks: {}, currentId: 1}))
+Expect((list1.removeTask(list1.tasks[1].id)).toEqual(List {tasks: {}, currentId: 1}))
+
+Test: "It will take a Task ID value as an argument and if there is not task with that ID value, it will return false"
+Expect((list1.removeTask(2)).toEqual(false))
 
 ## Known Bugs
 
