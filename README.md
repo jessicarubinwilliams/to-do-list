@@ -51,6 +51,11 @@ Describe: List()
 Test: "It will create List instances with task and currentId properties"
 Expect((let list1 = new List()).toEqual(List {tasks: {}, currentId: 0}));
 
+Describe: List.prototype.assignId
+Test: "It will increment the currentId property of List instances and return the newly incremented value"
+Expect((list1.assignId()).toEqual(List {tasks: {}, currentId: 1})))
+Expect((list1.assignId()).toEqual(return value = 1)))
+
 Describe: List.prototype.addTask(task1)
 Test: "It will take a Task as an argument, add the Task to the List as a property of the List, assign an id value to the task, and call the assignID method"
 Expect((list1.addTask()).toEqual(List {tasks: {Task {description: "Sweep the kitchen"}, isComplete: False, id: 1}, currentId: 1}))
