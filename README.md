@@ -28,30 +28,43 @@ _Users may add To Do List tasks to the list, mark the tasks as completed, change
 
 ## Tests
 
-Describe: List
-Test: "It will create a List constructor"
-Expect((new List()).toEqual({tasks: {}, currentId: 0}));
+Describe: Task()
+Test: "It will create Task instances with description and isComplete properties"
+Expect(let task1 = new Task()).toEqual(Task {description: "", isComplete: false});
 
-Describe: List.prototype.addTask
-Test: "It adds a task to the List and assign an id value to the task"
-Test argument: "Sweep the floor"
-Expect((List { tasks: [], currentId=1 }).toEqual(List { tasks: [ Task { description: "Sweep the floor", id=1 }] }))
+Test: "It will take an argument and create Task instances with that string as the value of the description property key"
+Expect((let task1 = new Task("Sweep the kitchen")).toEqual(Task {description: "Sweep the kitchen", isComplete: false}));
 
-Describe: List.prototype.removeTask
-Test: "It removes a task from the list"
-Expect(List { tasks: [ Task { description: "Sweep", id=1 }]).toEqual(List {tasks: []);
+Describe: Task.prototype.completeTask()
+Test: "It will change the value of Task property key isComplete to true"
+Expect((task1.completeTask()).toEqual(Task {description: "Sweep the kitchen", isComplete: true}))
+
+Describe: Task.prototype.undoCompleteTask()
+Test: "It will change the value of Task property key isComplete to false"
+Expect((task1.undoCompleteTask()).toEqual(Task {description: "Sweep the kitchen", isComplete: false}))
+
+Describe: Task.prototype.editDescription()
+Test: "It will take an argument and change the value of Task property that argument"
+Expect((task1.undoCompleteTask("Sweep and mop the kitchen")).toEqual(Task {description: "Sweep and mop the kitchen", isComplete: false}))
+
+Describe: List()
+Test: "It will create List instances with task and currentId properties"
+Expect((let list1 = new List()).toEqual(List {tasks: {}, currentId: 0}));
+
+Describe: List.prototype.addTask(task1)
+Test: "It will take a Task as an argument, add the Task to the List as a property of the List, assign an id value to the task, and call the assignID method"
+Expect((list1.addTask()).toEqual(List {tasks: {Task {description: "Sweep the kitchen"}, isComplete: False, id: 1}, currentId: 1}))
 
 Describe: List.prototype.findTask
-Test 1: "It finds the task with the given ID number"
-Expect()
-Test 2: "If there is no task with the given ID number, it returns false"
+Test: "It will take a Task ID value as an argument and return that Task"
+Expect((list1.findTask(task1.id)).toEqual(Task {description: "Sweep the kitchen"}, isComplete: False, id: 1))
 
-Describe: Task
-Test: "Task constructor will create a Task object that has an empty description and is incomplete"
-Expect(new Task()).toEqual({description: "", isComplete: false});
+Test: "It will take a Task ID value as an argument and if there is not task with that ID value, it will return false"
+Expect((list1.findTask(task2.id)).toEqual(false)
 
-Test: "Task constructor with a string argument will create a Task object with that string as its description"
-Expect((new Task("Sweep the floor")).toEqual({description: "Sweep the floor", isComplete: false}));
+Describe: List.prototype.removeTask
+Test: "It will take a Task as an argument and remove that task from the list"
+Expect((list1.removeTask()).toEqual(List {tasks: {}, currentId: 1}))
 
 ## Known Bugs
 
