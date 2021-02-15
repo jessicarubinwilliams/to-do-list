@@ -62,10 +62,11 @@ Expect((list1.addTask()).toEqual(List {tasks: {Task {description: "Sweep the kit
 
 Describe: List.prototype.findTask
 Test: "It will take a Task ID value as an argument and return that Task"
-Expect((list1.findTask(task1.id)).toEqual(Task {description: "Sweep the kitchen"}, isComplete: False, id: 1))
+Expect((list1.findTask(list1.tasks[1].id)).toEqual(Task {description: "Sweep the kitchen"}, isComplete: False, id: 1))
 
 Test: "It will take a Task ID value as an argument and if there is not task with that ID value, it will return false"
-Expect((list1.findTask(task2.id)).toEqual(false)
+Expect((list1.findTask(2)).toEqual(false))
+<!-- Expect((list1.findTask(list1.tasks[2].id)).toEqual(false)) This returns: Uncaught TypeError: Cannot read property 'id' of undefined -->
 
 Describe: List.prototype.removeTask
 Test: "It will take a Task as an argument and remove that task from the list"
