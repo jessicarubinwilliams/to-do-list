@@ -4,7 +4,7 @@
 
 #### _A web-based To Do List application_
 
-#### By _**Shanen Cross and Jessica R. Williams**_
+#### By _**Jessica R. Williams and Shanen Cross**_
 
 ## Technologies Used
 
@@ -16,7 +16,7 @@
 
 ## Description
 
-_Users may add To Do List tasks to the list, mark the tasks as completed, change task status back to incomplete, and delete tasks._
+_Users may add tasks to a list, mark the tasks as completed, change task status back to incomplete, and delete tasks._
 
 ## Setup/Installation Requirements
 
@@ -81,6 +81,6 @@ Expect((list1.removeTask(2)).toEqual(false))
 
 ## License
 *[MIT](https://choosealicense.com/licenses/mit/)*
-Copyright (c) **_2021 Shanen Cross, Jessica R. Williams_**
+Copyright (c) **_2021 Jessica R. Williams, Shanen Cross_**
 ## Contact Information
-**_Shanen Cross, (Jessica R. Williams [mailto](mailto:jessicarubinwilliams@gmail.com)_**
+**_(Jessica R. Williams [mailto](mailto:jessicarubinwilliams@gmail.com)_**
