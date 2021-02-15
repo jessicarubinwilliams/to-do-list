@@ -1,0 +1,7 @@
+LIST object
+constructor with properties tasks & currentId
+prototypes: addTask, assignId, findTask, deleteTask
+
+TASK object
+constructor with properties description, isComplete
+prototypes: completeTask, uncompleteTask, editDescription
